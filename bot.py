@@ -37,7 +37,7 @@ class SearchResult:
 
 def _prepare_auth_files() -> None:
     if not os.path.exists("client_secret.json"):
-        secret = os.environ.get("GOOGLE_CREDENTIALS_JSON")
+        secret = os.environ.get("GOOGLE_CLIENT_SECRET_JSON")
         if not secret:
             raise ValueError("client_secret.json 또는 GOOGLE_CLIENT_SECRET_JSON 환경변수가 필요합니다.")
         with open("client_secret.json", "w", encoding="utf-8") as f:
